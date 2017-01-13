@@ -1,19 +1,16 @@
 <div class="container text-center">
-
-  <h1>Log In</h1>
+  <div class="emptydiv"></div>
   <p id="alert"><%= alert %></p>
+  <h1 class="text-warning">ClimbOn</h1>
+  <span class="h1">Log In</span>
   <%= form_tag sessions_path do %>
     <div class="field">
-      <%= label_tag :email %>
-      <%= text_field_tag :email, params[:email] %>
+      <%= text_field_tag :email, params[:email], placeholder: "Email" %>
     </div>
     <div class="field">
-      <%= label_tag :password %>
-      <%= password_field_tag :password %>
+      <%= password_field_tag(:password, "", placeholder: "Password") %>
     </div>
-    <div class="actions"><%= submit_tag "Log In" %></div>
-    <div class="actions"><%= link_to "Sign up", new_user_path %></div>
+  <div class="actions"><%= submit_tag "Log In" %></div>
+  <div class="actions"><%= link_to "Sign up", new_user_path %></div>
   <% end %>
-
-
 </div>

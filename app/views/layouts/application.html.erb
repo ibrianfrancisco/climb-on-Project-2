@@ -9,7 +9,9 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
-<nav class="navbar navbar-default navbar-static-top">
+
+  <% if current_user %>
+  <nav class="navbar navbar-default navbar-static-top">
   <div class="navbar-header">
 <!--     <a class="navbar-brand" href="/">
       <img height="28px" class="desaturate below-break" src="/app/assets/images/tinder-flame.png" alt="Tinder Flame">
@@ -22,7 +24,6 @@
       <span class="icon-bar"></span>
     </button>
   </div>
-
   <div class="collapse navbar-collapse">
     <div class="container">
       <ul class="nav navbar-nav navbar-right">
@@ -30,28 +31,52 @@
         <!-- Don't forget to add links -->
           <a href="/">Home</a>
         </li>
-        <li>
+<!--         <li>
           <a href="/">Random</a>
+        </li> -->
+        <li>
+          <!-- <a href="/users/1">Profile</a> -->
+          <%= link_to 'Profile', users_path%>
         </li>
         <li>
-          <a href="/">Profile</a>
+          <%= link_to 'Sign Out', session_path('dummy'), method: :delete %>
         </li>
       </ul>
     </div>
   </div>
-</nav>
+  </nav>
 
-<p>
-  <% if current_user %>
-    Welcome, <%= current_user.name %>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-    <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
   <% else %>
-    <%= link_to 'Log In', login_path %>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-    <%= link_to 'Sign Up', new_user_path %>
+    <nav class="navbar navbar-default navbar-static-top">
+    <div class="navbar-header">
+  <!--     <a class="navbar-brand" href="/">
+        <img height="28px" class="desaturate below-break" src="/app/assets/images/tinder-flame.png" alt="Tinder Flame">
+        <%#= image_tag("Twitter-logo.jpg", height: "30px") %>
+      </a> -->
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse">
+      <div class="container">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="/">Log in</a>
+          </li>
+          <li>
+            <%= link_to 'Sign up', new_user_path %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
   <% end %>
-</p>
+
+
 
 <%= yield %>
 
