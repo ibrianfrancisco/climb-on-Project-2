@@ -7,7 +7,6 @@ class UsersController < ApplicationController
 
   def show
     @posts = @user.posts
-    @userid = @user.id
     # @user = User.find(params[:])
     # @posts = current_user.posts
   end
