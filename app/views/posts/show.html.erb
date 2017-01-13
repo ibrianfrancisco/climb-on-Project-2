@@ -1,0 +1,21 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <h3> Created at: <%= @post.created_at.localtime.strftime("%A, %b %d, %l:%M %p") %></h3>
+  <div class="panel panel-default">
+    <div class="panel panel-heading">
+      <div class="panel-title pull-left">
+        <%= @post.title %>
+      </div>
+      <div class="panel-title pull-right">
+        <%= @post.updated_at.localtime.strftime("%b %e, %l:%M %p") %>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="panel-body">
+      <%= simple_format(@post.description)%>
+    </div>
+  </div>
+  <%= link_to "Edit post", post_path + '/edit' %>
+  <%= link_to "Delete post", post_path, method: :delete, data: { confirm: "Are you sure you want to delete?" } %>
+  <%= link_to "Go Back", user_path(current_user.id) %>
+</div>

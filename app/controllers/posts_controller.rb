@@ -15,9 +15,13 @@ class PostsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @user.posts.create(post_params)
-    redirect_to @user
+    @createpost = User.find(session[:user_id])
+    @createpost.posts.create(post_params)
+    if @createpost.save
+      redirect_to @createpost, notice: "Your post has been saved."
+    else
+      render :new
+    end
   end
 
   def edit
@@ -28,7 +32,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     if @post.update_attributes(post_params)
-      redirect_to @post
+      redirect_to user_path(current_user.id)
     else
       render :edit
     end
@@ -38,7 +42,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 
     @post.destroy
-    redirect_to user_path(@post.user_id)
+    redirect_to user_path(current_user.id)
   end
 
   private
