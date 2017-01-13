@@ -15,7 +15,18 @@
       <%= simple_format(@post.description)%>
     </div>
   </div>
+
   <%= link_to "Edit post", post_path + '/edit' %>
   <%= link_to "Delete post", post_path, method: :delete, data: { confirm: "Are you sure you want to delete?" } %>
-  <%= link_to "Go Back", user_path(current_user.id) %>
+  <%#= link_to "Go Back", user_path if current_user %>
+  <!-- I can't figure it out. -->
+  <%#= link_to "Go Back", user_path if !current_user %>
+  <a href="javascript:history.back()">Go Back</a>
+  <% @comments.each do |comment| %>
+    <div class="container">
+      <%#= comment.title %>
+      <%= comment.body %>
+      <%#= comment.keyword %>
+    </div>
+    <% end %>
 </div>
