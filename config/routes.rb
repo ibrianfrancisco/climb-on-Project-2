@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root "users#index"
   resources :users
-  resources :posts
+  resources :posts, except: [:index]
   resources :sessions, only: [:create, :destroy]
   get '/login', to: 'users#index'
 end
