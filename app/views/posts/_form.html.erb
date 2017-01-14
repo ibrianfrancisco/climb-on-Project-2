@@ -1,0 +1,18 @@
+<div class="container">
+  <!-- <h1>Edit your post:</h1> -->
+
+  <%= form_for @post do |f| %>
+  <!-- <input type="text" class="form-control" placeholder="What's your name?"> -->
+  <div>
+    <%= f.text_field :title, :required => true, placeholder: "Title", :class =>"form-control" %>
+  </div>
+  <br>
+  <div>
+    <%= f.text_area :description, :required => true, size:"5x5", placeholder: "Write something...", :class =>"form-control" %>
+  </div>
+  <br>
+  <!-- <textarea class="form-control" rows="6" placeholder="Tweet something!"></textarea> -->
+  <%= f.submit "Submit", :class => "btn btn-primary" %>
+  <% end %>
+
+</div>

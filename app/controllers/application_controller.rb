@@ -15,4 +15,8 @@ class ApplicationController < ActionController::Base
     redirect_to root_path, alert: 'Not authorized - must be logged in!' if current_user.nil?
   end
 
+  def signup
+    redirect_to root_path, alert: 'Sign up to leave a comment!' if current_user.nil?
+  end
+
 end

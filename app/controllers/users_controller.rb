@@ -27,12 +27,24 @@ class UsersController < ApplicationController
   end
 
   def edit
+    unless session[:user_id] == @user.id
+      flash[:notice] = "You don't have access to that account!"
+      redirect_to users_path
+      return
+    end
   end
 
   def update
+    if @user.update_attributes(user_params)
+      redirect_to user_path(current_user.id)
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @user.destroy
+    redirect_to user_path(current_user.id)
   end
 
   private
@@ -42,7 +54,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :age, :bio, :email, :location, :password, :password_confirmation)
+    params.require(:user).permit(:name, :age, :bio, :email, :location, :image, :password, :password_confirmation)
   end
 end
 

@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authorize, except: [:index, :show]
 
   def index
@@ -6,7 +7,8 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @comment = @post.comments.new
+    @comment.post = @post
     @comments = @post.comments
   end
 
@@ -25,12 +27,14 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
+    unless current_user == @post.user
+      flash[:notice] = "You don't have access to that account!"
+      redirect_to users_path
+      return
+    end
   end
 
   def update
-    @post = Post.find(params[:id])
-
     if @post.update_attributes(post_params)
       redirect_to user_path(current_user.id)
     else
@@ -39,13 +43,15 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
-
     @post.destroy
     redirect_to user_path(current_user.id)
   end
 
   private
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
   def post_params
     params.require(:post).permit(:title, :description, :keyword, :image)
