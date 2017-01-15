@@ -1,1 +1,29 @@
-// put css in here from label shown.
+h1.avatar {
+  display: inline;
+  position: absolute;
+  top: 60px;
+}
+
+.profile-img {
+  width: 128px;
+  height: 128px;
+  border-radius: 100%;
+  margin: 10px 30px;
+}
+
+.profile-banner {
+  width: 690px;
+  height: 128px;
+  margin: 10px 20px;
+}
+
+header.profile {
+  display: inline-block;
+}
+
+.post {
+  background: #ddd;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 6px;
+}

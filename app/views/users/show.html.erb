@@ -1,32 +1,42 @@
 <% if current_user %>
-  <div class="container text-center help">
-    <h1>My Posts</h1>
-    <% @posts.each do |post| %>
-      <div class="container">
-        <%= post.title %>
-        <%= post.description %>
-        <%= post.keyword %>
-        <%= link_to 'Edit post', post_path(post) + '/edit' if current_user.id == @user.id %>
-        <%= link_to 'Show more', post_path(post) %>
-      </div>
-      <% end %>
-      <%= link_to 'Create post', new_post_path if current_user.id == @user.id %>
-      <%= link_to "Edit yo'self", edit_user_path if current_user.id == @user.id %>
 
+<div class="container">
+  <header class="container profile col-xs-4">
+    <%= image_tag @user.image, :class => "profile-img" %>
+    <h1 class="avatar"><%= @user.name %></h1>
+    <h2><%= @user.bio %></h2>
+    <p><%= @user.age %></p>
+    <p><%= @user.location %></p>
+    <p><%= @user.email %></p>
+  </header>
+  <div class="container profile col-xs-4 pull-left">
+<!--     <p>Events</p>
+    <p>Photos</p>
+    <p>Message Me</p>
+    <p>Favorite Climbs</p> -->
+    <%= image_tag @user.image, :class => "profile-banner" %>
   </div>
 
-
-  <div class="container">
-  <p><%= @user.name %></p>
-  <p><%= @user.age %></p>
-  <p><%= @user.bio %></p>
-  <p><%= @user.location %></p>
-<p><%= @user.email %></p>
-<p><%= image_tag @user.image %></p>
+  <div class="container text-center col-xs-8">
+    <p id="notice"><%= notice %></p>
+      <h1>My Posts</h1>
+      <% @posts.each do |post| %>
+        <div class="container post col-xs-12">
+          <%= post.title %>
+          <%= post.description %>
+          <%= post.keyword %>
+          <%= link_to 'Edit post', post_path(post) + '/edit' if current_user.id == @user.id %>
+          <%= link_to 'Show more', post_path(post) %>
+        </div>
+      <% end %>
+    <%= link_to 'Create post', new_post_path if current_user.id == @user.id %>
+    <%= link_to "Edit yo'self", edit_user_path if current_user.id == @user.id %>
+  </div>
   </div>
 <% else %>
 
 <div class="container text-center help">
+<p id="notice"><%= notice %></p>
   <h1>My Posts</h1>
   <% @posts.each do |post| %>
     <div class="container">

@@ -1,6 +1,6 @@
 
 nav.navbar {
-  background-color: rgba(0,0,0,0.2);
+  background-color: rgba(100,100,100,1);
 }
 
 // body {
@@ -10,10 +10,10 @@ nav.navbar {
 
 .emptydiv {
   width: 200px;
-  height: 180px;
+  height: 165px;
 }
 
-h1.text-warning {
+h1.text-danger {
   font-size: 56px;
 }
 
@@ -23,9 +23,8 @@ div.helper {
   height: 80%;
 }
 
-.img-size {
-  width: 100px;
-  height: 100px;
+.clearfix {
+  clear: both;
 }
 
 // .img-responsive

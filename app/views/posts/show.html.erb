@@ -19,8 +19,8 @@
     </div>
   </div>
 
-  <%= link_to "Edit post", post_path + '/edit' %>
-  <%= link_to "Delete post", post_path, method: :delete, data: { confirm: "Are you sure you want to delete?" } %>
+  <%= link_to "Edit post", post_path + '/edit' if current_user == @post.user %>
+  <%= link_to "Delete post", post_path, method: :delete, data: { confirm: "Are you sure you want to delete?" } if current_user == @post.user %>
   <%= link_to "Go Back", user_path(@post.user) %>
 </div>
 
@@ -111,8 +111,6 @@
     </div>
   </div>
 
-  <%= link_to "Edit post", post_path + '/edit' %>
-  <%= link_to "Delete post", post_path, method: :delete, data: { confirm: "Are you sure you want to delete?" } %>
   <%= link_to "Go Back", user_path(@post.user) %>
 </div>
 

@@ -3,5 +3,9 @@
 
   <%= render 'form' %>
 
-  <div class="link"><%= link_to 'Back', posts_path %></div>
+  <a href="javascript:history.back()">Go Back</a>
+  <!-- Can't figure out how to do a go back feature without this -->
 </div>
+
+
+<!-- idea: use hidden-field and input current users name so that when they submit comment, name will also appear there. -->

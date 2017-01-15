@@ -28,7 +28,7 @@ class PostsController < ApplicationController
 
   def edit
     unless current_user == @post.user
-      flash[:notice] = "You don't have access to that account!"
+      flash[:notice] = "Sorry, can't let you do that."
       redirect_to users_path
       return
     end
@@ -36,13 +36,18 @@ class PostsController < ApplicationController
 
   def update
     if @post.update_attributes(post_params)
-      redirect_to user_path(current_user.id)
+      redirect_to user_path(current_user.id), notice: "Your post has been saved."
     else
       render :edit
     end
   end
 
   def destroy
+    unless current_user == @post.user
+      flash[:notice] = "Sorry, can't let you do that."
+      redirect_to users_path
+      return
+    end
     @post.destroy
     redirect_to user_path(current_user.id)
   end
