@@ -5,6 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.integer :age
       t.text :bio
       t.string :location
+      t.attachment :bannerimg
       t.string :email
       t.string :password_digest
 

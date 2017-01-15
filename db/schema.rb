@@ -47,10 +47,14 @@ ActiveRecord::Schema.define(version: 20170113233756) do
     t.integer  "age"
     t.text     "bio"
     t.string   "location"
+    t.string   "bannerimg_file_name"
+    t.string   "bannerimg_content_type"
+    t.integer  "bannerimg_file_size"
+    t.datetime "bannerimg_updated_at"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
