@@ -1,7 +1,7 @@
 <%= form_for @user do |f| %>
   <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    Name
+    <%= f.text_field :name, :required => true, :class =>"form-control"%>
   </div>
   <div class="field">
     <%= f.label :age %>
@@ -30,6 +30,10 @@
   <div class="field">
     <%= f.label :image %>
     <%= f.file_field :image %>
+  </div>
+  <div class="field">
+    <%= f.label :bannerimg %>
+    <%= f.file_field :bannerimg %>
   </div>
   <div class="actions"><%= f.submit "Submit", :class => "btn btn-primary" %></div>
 <% end %>

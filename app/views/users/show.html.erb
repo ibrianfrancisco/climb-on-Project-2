@@ -2,35 +2,41 @@
 
 <div class="container">
   <header class="container profile col-xs-4">
-    <%= image_tag @user.image, :class => "profile-img" %>
+    <% if @user.image? %>
+      <%= image_tag @user.image, :class => "profile-img" %>
+    <% else %>
+    <% end %>
     <h1 class="avatar"><%= @user.name %></h1>
     <h2><%= @user.bio %></h2>
     <p><%= @user.age %></p>
     <p><%= @user.location %></p>
     <p><%= @user.email %></p>
+    <%= link_to "Edit yo'self", edit_user_path if current_user.id == @user.id %>
   </header>
   <div class="container profile col-xs-4 pull-left">
 <!--     <p>Events</p>
     <p>Photos</p>
     <p>Message Me</p>
     <p>Favorite Climbs</p> -->
-    <%= image_tag @user.image, :class => "profile-banner" %>
+
+  <!-- If you want to include a banner, here it is -->
+
+    <%#= image_tag @user.bannerimg, :class => "profile-banner" %>
   </div>
 
-  <div class="container text-center col-xs-8">
+  <div class="container col-xs-8">
     <p id="notice"><%= notice %></p>
-      <h1>My Posts</h1>
+      <h1 class="text-center">My Posts</h1>
       <% @posts.each do |post| %>
         <div class="container post col-xs-12">
-          <%= post.title %>
-          <%= post.description %>
-          <%= post.keyword %>
+          <h3><%= post.title %></h3>
+          <%= simple_format(post.description) %>
+          <p>Tags: <%= post.keyword %></p>
           <%= link_to 'Edit post', post_path(post) + '/edit' if current_user.id == @user.id %>
           <%= link_to 'Show more', post_path(post) %>
         </div>
       <% end %>
     <%= link_to 'Create post', new_post_path if current_user.id == @user.id %>
-    <%= link_to "Edit yo'self", edit_user_path if current_user.id == @user.id %>
   </div>
   </div>
 <% else %>
