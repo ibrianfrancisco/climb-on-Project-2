@@ -9,6 +9,9 @@
   <div>
     <%= f.text_area :description, :required => true, size:"5x5", placeholder: "Write something...", :class =>"form-control" %>
   </div>
+  <div>
+  <%= f.label :image %>
+  <%= f.file_field :image %>  </div>
   <br>
   <!-- <textarea class="form-control" rows="6" placeholder="Tweet something!"></textarea> -->
   <%= f.submit "Submit", :class => "btn btn-primary" %>
