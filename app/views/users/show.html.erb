@@ -5,6 +5,7 @@
     <% if @user.image? %>
       <%= image_tag @user.image, :class => "profile-img" %>
     <% else %>
+      <%= image_tag "/assets/noprofile.png", :class => "profile-img" %>
     <% end %>
     <h1 class="avatar"><%= @user.name %></h1>
     <h2><%= @user.bio %></h2>
@@ -14,33 +15,19 @@
     <%= link_to "Edit yo'self", edit_user_path if current_user.id == @user.id %>
 
 
-    <% @user ||= current_user %>
-    <div class="stats">
-      <a href="<%= following_user_path(@user) %>">
-        <strong id="following" class="stat">
-          <%= @user.followed_users.count %>
-        </strong>
-        following
-      </a>
-      <a href="<%= followers_user_path(@user) %>">
-        <strong id="followers" class="stat">
-          <%= @user.followers.count %>
-        </strong>
-        followers
-      </a>
-    </div>
+
 
     <% provide(:title, @user.name) %>
     <div class="row">
       <aside class="span4">
         <section>
           <h1>
-            <%#= gravatar_for @user %>
+            <%= gravatar_for @user %>
             <%= @user.name %>
           </h1>
         </section>
         <section>
-          <%#= render 'shared/stats' %>
+          <%= render 'shared/stats' %>
         </section>
       </aside>
       <div class="span8">
@@ -75,23 +62,73 @@
     <%= link_to 'Create post', new_post_path if current_user.id == @user.id %>
   </div>
   </div>
+
+
+
+
 <% else %>
 
-<div class="container text-center help">
-<p id="notice"><%= notice %></p>
-  <h1>My Posts</h1>
-  <% @posts.each do |post| %>
-    <div class="container">
-      <%= post.title %>
-      <%= post.description %>
-      <%= post.keyword %>
-      <%= link_to 'Show more', post_path(post) %>
 
-    </div>
+<div class="container">
+  <header class="container profile col-xs-4">
+    <% if @user.image? %>
+      <%= image_tag @user.image, :class => "profile-img" %>
+    <% else %>
+      <%= image_tag "/assets/noprofile.png", :class => "profile-img" %>
     <% end %>
+    <h1 class="avatar"><%= @user.name %></h1>
+    <h2><%= @user.bio %></h2>
+    <p><%= @user.age %></p>
+    <p><%= @user.location %></p>
+    <p><%= @user.email %></p>
 
 
-</div>
+
+
+    <% provide(:title, @user.name) %>
+    <div class="row">
+      <aside class="span4">
+        <section>
+          <h1>
+            <%= gravatar_for @user %>
+            <%= @user.name %>
+          </h1>
+        </section>
+        <section>
+          <%= render 'shared/stats' %>
+        </section>
+      </aside>
+      <div class="span8">
+        <%= render 'follow_form' %>
+      </div>
+    </div>
+
+  </header>
+  <div class="container profile col-xs-4 pull-left">
+<!--     <p>Events</p>
+    <p>Photos</p>
+    <p>Message Me</p>
+    <p>Favorite Climbs</p> -->
+
+  <!-- If you want to include a banner, here it is -->
+
+    <%#= image_tag @user.bannerimg, :class => "profile-banner" %>
+  </div>
+
+  <div class="container col-xs-8">
+    <p id="notice"><%= notice %></p>
+      <h1 class="text-center">My Posts</h1>
+      <% @posts.each do |post| %>
+        <div class="container post col-xs-12">
+          <h3><%= post.title %></h3>
+          <%= simple_format(post.description) %>
+          <p>Tags: <%= post.keyword %></p>
+          <%= link_to 'Show more', post_path(post) %>
+        </div>
+      <% end %>
+  </div>
+  </div>
+
 
 <% end %>
 <%#= link_to "Edit", edit_job_path(@job), class: "btn btn-sm btn-default" if @current_user.id == @job.owner_id %>

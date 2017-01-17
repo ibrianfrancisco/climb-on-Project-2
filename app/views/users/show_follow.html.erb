@@ -1,17 +1,20 @@
 <%# provide(:title, @title) %>
   <aside class="span4">
     <section>
-      <%#= gravatar_for @user %>
+      <% if @user.image? %>
+        <%= image_tag @user.image, :class => "profile-img" %>
+      <% else %>
+      <% end %>
       <h1><%= @user.name %></h1>
       <span><%= link_to "View my profile", @user %></span>
       <span><b>Posts:</b> <%= @user.posts.count %></span>
     </section>
     <section>
-      <%#= render 'shared/stats' %>
+      <%= render 'shared/stats' %>
       <%# if @users.any? %>
         <div class="user_avatars">
           <%# @users.each do |user| %>
-            <%#= link_to gravatar_for(user, size: 30), user %>
+            <%= gravatar_for @user %>
           <%# end %>
         </div>
       <%# end %>

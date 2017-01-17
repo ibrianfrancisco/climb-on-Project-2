@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def index
     @users = User.all
     # if signed_in?
-      @micropost  = current_user.posts.build
+      # @micropost  = current_user.posts.build
       # @feed_items = current_user.feed.paginate(page: params[:page])
     # end
   end
