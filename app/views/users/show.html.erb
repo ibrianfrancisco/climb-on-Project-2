@@ -12,6 +12,42 @@
     <p><%= @user.location %></p>
     <p><%= @user.email %></p>
     <%= link_to "Edit yo'self", edit_user_path if current_user.id == @user.id %>
+
+
+    <% @user ||= current_user %>
+    <div class="stats">
+      <a href="<%= following_user_path(@user) %>">
+        <strong id="following" class="stat">
+          <%= @user.followed_users.count %>
+        </strong>
+        following
+      </a>
+      <a href="<%= followers_user_path(@user) %>">
+        <strong id="followers" class="stat">
+          <%= @user.followers.count %>
+        </strong>
+        followers
+      </a>
+    </div>
+
+    <% provide(:title, @user.name) %>
+    <div class="row">
+      <aside class="span4">
+        <section>
+          <h1>
+            <%#= gravatar_for @user %>
+            <%= @user.name %>
+          </h1>
+        </section>
+        <section>
+          <%#= render 'shared/stats' %>
+        </section>
+      </aside>
+      <div class="span8">
+        <%= render 'follow_form' %>
+      </div>
+    </div>
+
   </header>
   <div class="container profile col-xs-4 pull-left">
 <!--     <p>Events</p>
