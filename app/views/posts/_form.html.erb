@@ -1,7 +1,6 @@
 <div class="container">
 
   <%= form_for @post do |f| %>
-  <!-- <input type="text" class="form-control" placeholder="What's your name?"> -->
   <div>
     <%= f.text_field :title, :required => true, placeholder: "Title", :class =>"form-control" %>
   </div>
@@ -13,7 +12,6 @@
   <%= f.label :image %>
   <%= f.file_field :image %>  </div>
   <br>
-  <!-- <textarea class="form-control" rows="6" placeholder="Tweet something!"></textarea> -->
   <%= f.submit "Submit", :class => "btn btn-primary" %>
   <% end %>
 

@@ -25,9 +25,9 @@
 
   <div class="page">
     <div class="container text-center">
-      <div class="emptydiv"></div>
       <h1 class="maintitle">Climb On</h1>
       <p id="alert"><%= alert %></p>
+      <div class="emptydiv">
       <%= form_tag sessions_path do %>
         <div class="field">
           <%= text_field_tag :email, params[:email], placeholder: "Email" %>
@@ -37,10 +37,10 @@
         </div>
         <span class="actions"><%= submit_tag "", :style => "display: none;" %></span>
       <% end %>
-    </div>
-
     <footer class="text-center">
       &copy; 2017 <span class="name">ibrianfrancisco</span>
     </footer>
+    </div>
+    </div>
   </div>
 <% end %>
