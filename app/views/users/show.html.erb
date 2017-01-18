@@ -55,8 +55,10 @@
           <h3><%= post.title %></h3>
           <%= simple_format(post.description) %>
           <p>Tags: <%= post.keyword %></p>
-          <%= link_to 'Edit post', post_path(post) + '/edit' if current_user.id == @user.id %>
           <%= link_to 'Show more', post_path(post) %>
+          <%= link_to 'Edit post', post_path(post) + '/edit' if current_user.id == @user.id %>
+          <%= link_to "Delete post /", post_path(post), method: :delete, data: { confirm: "Are you sure you want to delete?" } if current_user.id == @user.id %>
+
         </div>
       <% end %>
     <%= link_to 'Create post', new_post_path if current_user.id == @user.id %>

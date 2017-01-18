@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_post, only: [:edit, :update, :destroy]
+  before_action :set_comment, only: [:edit, :update, :destroy]
   before_action :signup, only: [:show]
 
   def index
@@ -16,6 +16,8 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
+    @comment.user = current_user
+    @comment.post_id = params[:post_id]
     if @comment.save
       redirect_to :back, notice: "Your comment was published!"
     else
@@ -28,15 +30,16 @@ class CommentsController < ApplicationController
 
   def update
     if @comment.update_attributes(comment_params)
-      redirect_to user_path(current_user.id)
+      redirect_to post_path(@comment.post)
     else
       render :edit
     end
   end
 
   def destroy
+    post = @comment.post
     @comment.destroy
-    redirect_to user_path(current_user.id)
+    redirect_to post
   end
 
   private
@@ -46,7 +49,7 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:body, :user_id, :post_id)
+    params.require(:comment).permit(:body, :user_id, :post_id, :user_name)
   end
 
 end

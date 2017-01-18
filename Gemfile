@@ -48,3 +48,5 @@ end
 gem "aws-sdk", "~> 2"
 gem "paperclip", "~> 5.0.0"
 gem "figaro"
+gem 'will_paginate', '3.0.4'
+gem 'bootstrap-will_paginate', '0.0.9'

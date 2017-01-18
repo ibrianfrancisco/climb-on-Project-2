@@ -7,9 +7,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @comment = @post.comments.new
-    @comment.post = @post
-    @comments = @post.comments
+    @comment = Comment.new
   end
 
  def new
@@ -22,6 +20,7 @@ class PostsController < ApplicationController
     if @createpost.save
       redirect_to @createpost, notice: "Your post has been saved."
     else
+      @feed_items = []
       render :new
     end
   end

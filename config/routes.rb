@@ -5,9 +5,10 @@ Rails.application.routes.draw do
       get :following, :followers
     end
   end
-  resources :posts, except: [:index]
+  resources :posts, except: [:index], shallow: true do
+    resources :comments, only: [:edit, :update, :create, :destroy]
+  end
   resources :relationships, only: [:create, :destroy]
-  resources :comments, except: [:index, :show]
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :sessions, only: [:index, :new, :create, :destroy]
   get '/login', to: 'users#index'
 end

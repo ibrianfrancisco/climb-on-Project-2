@@ -2,22 +2,23 @@
   <div class="container text-center help">
     <h1>Dashboard</h1>
     <p id="notice"><%= notice %></p>
+  </div>
+  <div class="container col-md-6">
 
-    <%# if signed_in? %>
-
+    <div class="span8">
+      <h3>User's Feed</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
           <section>
-            <%#= render 'shared/user_info' %>
+            <%= render 'shared/user_info' %>
           </section>
           <section>
             <%= render 'shared/stats' %>
           </section>
           <section>
-            <%#= render 'shared/post_form' %>
+            <%= render 'shared/post_form' %>
           </section>
-
-    <%# else %>
-
-    <%# end %>
   </div>
 
 <% else %>
