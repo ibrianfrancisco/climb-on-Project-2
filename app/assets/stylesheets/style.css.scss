@@ -4,7 +4,7 @@ nav.navbar {
 }
 
 .page {
-  background: url(/assets/loginimage.jpg) no-repeat center center fixed;
+  image-url("loginimage.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
