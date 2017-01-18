@@ -13,6 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+  font-family: 'Droid Sans', sans-serif;
+}
+
+.droidsans {
+  font-family: 'Droid Sans', sans-serif;
+}
+
 body {
   padding-top: 70px;
+  font-family: Helvetica, sans-serif;
+}
+
+.maintitle {
+  font-size: 85px;
+  font-family: Vollkorn, Helvetica, sans-serif;;
 }
