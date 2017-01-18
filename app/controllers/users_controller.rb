@@ -5,6 +5,13 @@ class UsersController < ApplicationController
   def index
     @users = User.all
 
+    if params[:random]
+      n = @users.length
+      rnd_idx = rand(0...n)
+      user = @users[rnd_idx]
+      redirect_to "/users/#{user.id}?random=true"
+    end
+
     if current_user
       @post = current_user.posts.build
       @feed_items = current_user.feed.paginate(page: params[:page])
