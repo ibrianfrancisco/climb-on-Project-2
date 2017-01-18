@@ -1,6 +1,8 @@
 <% if @feed_items.any? %>
+<div class="container col-md-12">
   <ul class="feedposts">
     <%= render partial: 'shared/feed_item', collection: @feed_items %>
   </ul>
+</div>
   <%= will_paginate @feed_items %>
 <% end %>
