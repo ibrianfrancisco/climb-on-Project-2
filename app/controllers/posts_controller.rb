@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     @createpost = User.find(session[:user_id])
     @createpost.posts.create(post_params)
     if @createpost.save
-      redirect_to @createpost, notice: "Your post has been saved."
+      redirect_to root_path, notice: "Your post has been saved."
     else
       @feed_items = []
       render :new
@@ -48,7 +48,7 @@ class PostsController < ApplicationController
       return
     end
     @post.destroy
-    redirect_to user_path(current_user.id)
+    redirect_to root_path
   end
 
   private

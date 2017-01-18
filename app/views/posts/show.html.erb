@@ -16,7 +16,7 @@
       </div>
       <div class="panel-body">
         <%= simple_format(@post.description)%>
-          <%= image_tag @post.image, class: "profile-img" if @post.image? %>
+          <%= image_tag @post.image, class: "post-img" if @post.image? %>
       </div>
     </div>
 
@@ -72,7 +72,7 @@
       </div>
       <div class="panel-body">
         <%= simple_format(@post.description)%>
-          <%= image_tag @post.image, class: "profile-img" if @post.image? %>
+          <%= image_tag @post.image, class: "post-img" if @post.image? %>
       </div>
     </div>
   <%= link_to "Go Back", user_path(@post.user) %>
