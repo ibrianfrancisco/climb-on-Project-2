@@ -1,12 +1,12 @@
 <div class="container">
-  <header class="container col-xs-4">
+  <header class="profile-info col-xs-4">
     <% if @user.image? %>
       <%= image_tag @user.image, :class => "profile-img" %>
     <% else %>
       <%= image_tag "noprofile.png", :class => "profile-img" %>
     <% end %>
     <h1 class="profilename"><%= @user.name %></h1>
-    <h5><%= @user.bio %></h5>
+    <h4><%= @user.bio %></h4>
     <p><%= @user.age %></p>
     <p><%= @user.location %></p>
     <p><%= @user.email %></p>
@@ -14,8 +14,8 @@
       <%= render 'shared/stats' %>
     </section>
     <% if current_user %>
-      <%= link_to "Edit yo'self", edit_user_path if current_user.id == @user.id %>
-      <%= link_to "Delete yo'self", user_path, method: :delete, data: { confirm: "You sure?" } if current_user.id == @user.id %>
+      <%= link_to "Account settings", edit_user_path if current_user.id == @user.id %>
+      <%#= link_to "Delete yo'self", user_path, method: :delete, data: { confirm: "You sure?" } if current_user.id == @user.id %>
       <div>
         <%= render 'follow_form' if current_user.id != @user.id %>
       </div>

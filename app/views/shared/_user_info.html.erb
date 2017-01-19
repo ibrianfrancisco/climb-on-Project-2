@@ -1,8 +1,11 @@
 <span class="h1">
   <%= current_user.name %>
 </span>
+<% if current_user.image? %>
   <%= image_tag current_user.image, :class => "profile-img" %>
-
+<% else %>
+  <%= image_tag "noprofile.png", :class => "profile-img" %>
+<% end %>
 <div class="text-center">
   <%= pluralize(current_user.posts.count, "post") %>
 </div>

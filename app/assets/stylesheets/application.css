@@ -18,8 +18,16 @@
   font-family: 'Droid Sans', sans-serif;
 }
 
+body {
+  background: rgba(53,70,92,1) !important;
+}
+
+#button {
+  margin: 5px 0 10px 0;
+}
+
 nav.navbar {
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(53,70,92,1);
 }
 
 nav.navbar a {
@@ -31,35 +39,44 @@ nav.navbar a {
   background: rgba(200,200,200,0.2);
 }
 
+.inline {
+  display: inline-block;
+}
+
 .maintitle {
   font-size: 100px;
   font-family: Vollkorn, Helvetica, sans-serif;
   position: relative;
-  top: 60px;
-  right: 375px;
+  bottom: 65px;
+  right: 355px;
 }
 
 .phrase-title {
   font-family: Vollkorn, Helvetica, sans-serif;
   position: relative;
-  top: 28px;
-  right: 350px;
+  bottom: 101px;
+  right: 330px;
 }
 
 .login {
   position: relative;
-  bottom: 74px;
-  right: 50px;
-}
-
-.clearfix {
-  clear: both;
+  bottom: 205px;
+  right: 40px;
 }
 
 .sign-backdrop {
   width: 600px;
   height: 688px;
-  background: rgba(0,0,0,0.7);
+  background: rgba(53,70,92,1);
   padding: 1px 30px;
   color: white;
+  border-radius: 10px;
+}
+
+.text-area {
+  resize: none;
+}
+
+.clearfix {
+  clear: both;
 }

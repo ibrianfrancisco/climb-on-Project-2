@@ -1,7 +1,3 @@
-#button {
-  margin: 0 0 10px 0;
-}
-
 .post-img {
   min-width: 480px;
   max-width: 600px;
@@ -10,10 +6,11 @@
 }
 
 .post {
-  background: #eee;
-  margin: 20px;
-  padding: 20px;
-  border-radius: 6px;
+  background: white;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  color: black;
 }
 
 .feedposts {
@@ -50,7 +47,6 @@ div.panel-title {
 .title{
   font-weight: bold;
 }
-
 
 .postcontent {
 

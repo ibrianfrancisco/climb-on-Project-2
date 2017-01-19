@@ -14,12 +14,9 @@
 
   <nav class="navbar navbar-fixed-top">
     <div class="navbar-header">
-        <%# if current_user %>
       <a class="navbar-brand" href="/">
         <%= image_tag("climb-on-logo.png", height: "30px", class: "desaturate below-break", alt: "Climbon") %>
       </a>
-        <%# else %>
-        <%# end %>
       <%#= text_field_tag :search, params[:search], placeholder: "Search...", :class => "navbar-default" %>
       <%#= submit_tag "Search" %>
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false">
@@ -40,14 +37,14 @@
               <%= link_to 'Profile', user_path(current_user.id)%>
             </li>
             <li id="navlink">
-              <%= link_to "Random", '/users?random=true' %>
+              <%= link_to "Explore", '/users?random=true' %>
             </li>
             <li id="navlink">
               <%= link_to 'Sign Out', session_path('dummy'), method: :delete %>
             </li>
           <% else %>
             <li id="navlink">
-              <%= link_to "Random", '/users?random=true' %>
+              <%= link_to "Explore", '/users?random=true' %>
             </li>
             <li id="navlink">
               <a href="/">Log in</a>
