@@ -1,8 +1,10 @@
 <div class="container">
-<%= link_to 'Back', user_path(@user), :class => "btn btn-primary btn-xs" %>
+  <%= link_to 'Back', user_path(@user), :class => "btn btn-danger btn-xs", :id => "button" %>
+  <div class="sign-backdrop">
+    <h1 class="title">Edit yo'self</h1>
+    <hr class="linefix">
 
-  <h1>Edit yo'self</h1>
+    <%= render 'form' %>
 
-  <%= render 'form' %>
-
+  </div>
 </div>

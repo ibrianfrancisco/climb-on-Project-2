@@ -1,7 +1,8 @@
 <div class="page">
   <div class="container text-center">
-    <span id="alert"><%= alert %></span>
+    <span id="alert" class="text-danger"><%= alert %></span>
     <h1 class="maintitle">Climb On</h1>
+    <h3 class="phrase-title">Re-live your adventures</h3>
     <div class="login form-group">
     <%= form_tag sessions_path do %>
       <div class="field">
@@ -12,10 +13,9 @@
       </div>
       <span class="actions"><%= submit_tag "", :style => "display: none;" %></span>
     <% end %>
-  <footer class="text-center">
-    &copy; 2017 <span class="name">ibrianfrancisco</span>
-  </footer>
+    <footer class="text-center">
+      &copy; 2017 <span class="name">ibrianfrancisco</span>
+    </footer>
+    </div>
   </div>
-  </div>
-
 </div>

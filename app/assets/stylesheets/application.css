@@ -39,9 +39,16 @@ nav.navbar a {
   right: 375px;
 }
 
+.phrase-title {
+  font-family: Vollkorn, Helvetica, sans-serif;
+  position: relative;
+  top: 28px;
+  right: 350px;
+}
+
 .login {
   position: relative;
-  bottom: 49px;
+  bottom: 74px;
   right: 50px;
 }
 
@@ -49,11 +56,10 @@ nav.navbar a {
   clear: both;
 }
 
-.test {
+.sign-backdrop {
   width: 600px;
   height: 688px;
   background: rgba(0,0,0,0.7);
   padding: 1px 30px;
   color: white;
-
 }

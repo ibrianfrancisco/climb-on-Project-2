@@ -5,7 +5,7 @@ module ApplicationHelper
     if user.image?
       image_tag(gravatar_url, alt: user.name, class: "gravatar")
     else
-      image_tag "/assets/noprofile.png", class: "gravatar"
+      image_tag "noprofile.png", class: "gravatar"
     end
   end
 

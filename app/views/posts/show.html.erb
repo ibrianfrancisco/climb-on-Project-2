@@ -27,7 +27,7 @@
   <% @post.comments.each do |comment| %>
     <div class="panel-heading">
           <span><%= link_to gravatar_for(comment.user), comment.user %></span>
-          <span class="fixname postname"><%= comment.user.name %></span>
+          <span class="fixname postname"><%= link_to comment.user.name, comment.user %></span>
           <span>Posted <%= time_ago_in_words(@post.created_at) %> ago.</span>
           <span class="fixcomment"><%= comment.body %></span>
       <% if current_user %>
