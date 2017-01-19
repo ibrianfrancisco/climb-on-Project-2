@@ -1,39 +1,52 @@
 <%= form_for @user do |f| %>
-  <div class="field">
-    Name
-    <%= f.text_field :name, :required => true, :class =>"form-control"%>
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Name</label>
+    <div class="col-10">
+      <%= f.text_field :name, :required => true, :maxlength => 20, :class =>"form-control"%>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :age %>
-    <%= f.number_field :age %>
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Age</label>
+    <div class="col-10">
+      <%= f.number_field :age, :max => 100, :min => 1, :class =>"form-control"%>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :bio %>
-    <%= f.text_area :bio %>
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Description</label>
+    <div class="col-10">
+      <%= f.text_area :bio, :maxlength => 120, :class =>"form-control"%>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :location %>
-    <%= f.text_field :location %>
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Location</label>
+    <div class="col-10">
+      <%= f.text_field :location, :maxlength => 20, :class =>"form-control"%>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Email</label>
+    <div class="col-10">
+      <%= f.text_field :email, :required => true, :class =>"form-control"%>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Password</label>
+    <div class="col-10">
+      <%= f.password_field :password, :required => true, :class =>"form-control"%>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Confirm Password</label>
+    <div class="col-10">
+      <%= f.password_field :password_confirmation, :required => true, :class =>"form-control"%>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :image %>
-    <%= f.file_field :image %>
+  <div class="form-group row">
+    <label class="col-2 col-form-label">Profile Picture</label>
+    <div class="col-10">
+      <%= f.file_field :image, :class => "pull-left" %>
+      <span><%= f.submit "Sign Up", :class => "btn btn-primary pull-right" %></span>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :bannerimg %>
-    <%= f.file_field :bannerimg %>
-  </div>
-  <div class="actions"><%= f.submit "Submit", :class => "btn btn-primary" %></div>
+
 <% end %>

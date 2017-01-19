@@ -1,7 +1,7 @@
 <div class="container">
-  <h1>Edit Post</h1>
+  <%= link_to 'Back', user_path(@post.user), :class => "btn btn-primary btn-xs" %>
+  <h1 class="title">Edit Post</h1>
 
   <%= render 'form' %>
 
-  <div class="link"><%= link_to 'Back', user_path(@post.user) %></div>
 </div>

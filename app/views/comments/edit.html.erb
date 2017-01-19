@@ -1,16 +1,16 @@
 <div class="container">
-  <h1>Edit Comment</h1>
+  <%= link_to 'Back', post_path(@comment.post), :class => "btn btn-primary btn-xs" %>
 
-  <%= form_for @comment do |f| %>
-
-  <div>
-    <%= f.text_field :body, :required => true, placeholder: "Title", :class =>"form-control" %>
-  </div>
-  <div>
-  <%= f.submit "Submit", :class => "btn btn-primary" %>
-  </div>
-
-  <% end %>
-
-  <div class="link"><%= link_to 'Back', post_path(@comment.post) %></div>
+  <h1 class="title">Edit Comment</h1>
+  <div class="container">
+    <%= form_for @comment do |f| %>
+      <div>
+        <%= f.text_field :body, :required => true, placeholder: "Title", :class =>"form-control" %>
+      </div>
+      <br>
+      <div>
+        <%= f.submit "Submit", :class => "btn btn-primary" %>
+      </div>
+    </div>
+    <% end %>
 </div>

@@ -1,7 +1,9 @@
 <div class="container">
-  <h1>Sign Up</h1>
+  <%= link_to 'Back', users_path, :class => "btn btn-danger btn-xs", :id => "button" %>
+  <div class="test">
+  <h1 class="title">Sign Up</h1>
+  <hr class="linefix">
 
   <%= render 'form' %>
-
-  <div class="link"><%= link_to 'Back', users_path %></div>
+  </div>
 </div>

@@ -1,0 +1,64 @@
+.profilename {
+  display: inline-block;
+  position: relative;
+  top: 10px;
+}
+
+.profile-img {
+  width: 128px;
+  height: 128px;
+  // border-radius: 20%;
+  border: white 2px solid;
+  margin: 10px 30px;
+}
+
+.gravatar {
+  height: 52px;
+  width: 52px;
+  margin: 1px 1px;
+}
+
+.userinfo {
+}
+
+.linefix {
+  margin: 0 0 10px 0;
+}
+
+.stats {
+  overflow: auto;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid grayLighter;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: blue;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+
+body {
+  padding-top: 70px;
+  background-image: image-url("loginimage.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  top: 0;
+  left: 0;
+
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+}

@@ -2,12 +2,7 @@ class CommentsController < ApplicationController
   before_action :set_comment, only: [:edit, :update, :destroy]
   before_action :signup, only: [:show]
 
-  def index
-    # Don't need?
-  end
-
   def show
-    # Don't need?
   end
 
   def new
@@ -53,6 +48,3 @@ class CommentsController < ApplicationController
   end
 
 end
-
-# user has_many messages
-# messages belong_to user

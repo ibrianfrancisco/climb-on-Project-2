@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :authorize, except: [:index, :show, :new, :create, :following, :followers]
-  # before_action :signed_in_user, only: [:index, :edit, :update, :destroy, :following, :followers]
+
   def index
     @users = User.all
 
@@ -82,15 +82,4 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :age, :bio, :email, :location, :image, :bannerimg, :password, :password_confirmation)
   end
 
-  # def signed_in_user
-  #   redirect_to signin_url, notice: "Please sign in." unless signed_in?
-  # end
 end
-
-# def destroy
-#   @hack = Hack.find(params[:id])
-#   @hack.destroy if @hack.user == current_user
-#   redirect_to Disneyland
-# end
-
-# basically this is how you make sure that only the person that is currently logged in can destroy their own acct and not others.

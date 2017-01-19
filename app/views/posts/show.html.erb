@@ -1,8 +1,5 @@
 <div class="container">
   <p id="notice"><%= notice %></p>
-  <h3>
-    <%= @post.title %>
-  </h3>
   <div class="panel panel-default">
     <div class="panel panel-heading">
       <div class="panel-title pull-left">
@@ -28,19 +25,14 @@
 
 <div class="container">
   <% @post.comments.each do |comment| %>
-    <div class="panel panel-default">
-      <div class="panel panel-heading">
-        <div class="panel-title">
-          <%= link_to gravatar_for(comment.user), comment.user %>
-          <%= comment.user.name %>
-        </div>
-      </div>
-      <div class="panel-body">
-        <%= comment.body %>
-      </div>
+    <div class="panel-heading">
+          <span><%= link_to gravatar_for(comment.user), comment.user %></span>
+          <span class="fixname postname"><%= comment.user.name %></span>
+          <span>Posted <%= time_ago_in_words(@post.created_at) %> ago.</span>
+          <span class="fixcomment"><%= comment.body %></span>
       <% if current_user %>
         <div class="container">
-          <%= link_to "Delete", comment_path(comment), method: :delete, data: { confirm: "Are you sure you want to delete?" } if current_user.id == comment.user_id %>
+          <%= link_to "Delete /", comment_path(comment), method: :delete, data: { confirm: "Are you sure you want to delete?" } if current_user.id == comment.user_id %>
           <%= link_to "Edit", comment_path(comment) + '/edit' if current_user == comment.user %>
         </div>
       <% else %>
@@ -53,9 +45,7 @@
         <div class="panel panel-info">
           <%= f.text_area :body, size:"2x3", :class => "form-control", :required => true, placeholder: "Say something..." %>
         </div>
-        <div class="actions">
-          <%= f.submit "", :style => "display: none;" %>
-        </div>
+          <%= f.submit "Submit", :class => "btn btn-primary" %>
       <% end %>
   <% else %>
   <% end %>

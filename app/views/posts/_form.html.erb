@@ -2,17 +2,18 @@
 
   <%= form_for @post do |f| %>
   <div>
-    <%= f.text_field :title, :required => true, placeholder: "Title", :class =>"form-control" %>
+    <%= f.text_field :title, :required => true, placeholder: "Title", :maxlength => 90, :class =>"form-control" %>
   </div>
   <br>
   <div>
     <%= f.text_area :description, :required => true, size:"5x5", placeholder: "Write something...", :class =>"form-control" %>
   </div>
-  <div>
-  <%= f.label :image %>
-  <%= f.file_field :image %>  </div>
   <br>
-  <%= f.submit "Submit", :class => "btn btn-primary" %>
+  <div class="form">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+  <br>
+  <%= f.submit "Post", :class => "btn btn-primary" %>
   <% end %>
-
 </div>

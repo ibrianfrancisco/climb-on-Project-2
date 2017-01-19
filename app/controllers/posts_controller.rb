@@ -47,7 +47,7 @@ class PostsController < ApplicationController
       redirect_to users_path
       return
     end
-    @post.destroy
+    @post.destroy if @post.user == current_user
     redirect_to root_path
   end
 
