@@ -7,12 +7,13 @@
 .profile-img {
   width: 128px;
   height: 128px;
-  border: white 2px solid;
+  border: black 2px solid;
   margin: 10px 30px;
   border-radius: 5px;
 }
 
 .userinfo {
+  padding: 0 5px;
 }
 
 .linefix {
@@ -31,7 +32,19 @@ body {
   border-radius: 10px;
 }
 
-div.page {
+.profile-post-img {
+  min-width: 330px;
+  max-width: 400px;
+  min-height: 180px;
+  max-height: 240px;
+  margin-top: 5px;
+}
+
+div.mainpage {
+  padding: 213px 0;
+}
+
+div.bg {
   background-image: image-url("loginimage.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -39,11 +52,14 @@ div.page {
   background-size: cover;
   background-repeat: repeat;
   background-attachment: fixed;
-  top: 0;
-  left: 0;
-  padding: 213px 0;
   margin-top: -70px;
   /* Preserve aspet ratio */
   width: 100%;
   height: auto;
+  top: 0;
+  left: 0;
+}
+
+div.signpage {
+  padding: 70px 0 15px 0;
 }

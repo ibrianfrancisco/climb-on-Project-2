@@ -1,8 +1,8 @@
 <div class="container">
-  <%= link_to 'Back', user_path(@user), :class => "btn btn-danger btn-xs", :id => "button" %>
+  <%= link_to 'Back', user_path(@user), :class => "btn btn-danger btn-xs", :id => "fixmargin" %>
   <div class="sign-backdrop">
     <h1 class="title inline">Account Settings </h1>
-    <%= link_to "Delete yo'self", user_path, method: :delete, data: { confirm: "Are you sure you want to delete your account?" }, :id => "button", :class => "btn btn-danger btn-xs pull-right" if current_user.id == @user.id %>
+    <%= link_to "Delete yo'self", user_path, method: :delete, data: { confirm: "Are you sure you want to delete your account?" }, :id => "fixmargin", :class => "btn btn-danger btn-xs pull-right" if current_user.id == @user.id %>
 
 
 

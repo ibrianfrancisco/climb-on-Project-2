@@ -5,7 +5,7 @@
   <div class="container">
     <%= form_for @comment do |f| %>
       <div>
-        <%= f.text_field :body, :required => true, placeholder: "Title", :class =>"form-control" %>
+        <%= f.text_area :body, :required => true, placeholder: "Title", :size => "4x4", :class =>"form-control text-area" %>
       </div>
       <br>
       <div>

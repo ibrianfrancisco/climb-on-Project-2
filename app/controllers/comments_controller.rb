@@ -25,7 +25,7 @@ class CommentsController < ApplicationController
 
   def update
     if @comment.update_attributes(comment_params)
-      redirect_to post_path(@comment.post)
+      redirect_to post_path(@comment.post), notice: "Your comment was saved!"
     else
       render :edit
     end

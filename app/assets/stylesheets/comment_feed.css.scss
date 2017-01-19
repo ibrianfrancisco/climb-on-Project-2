@@ -2,6 +2,7 @@
   height: 52px;
   width: 52px;
   margin: 1px 1px;
+  border-radius: 5px;
 }
 
 .stats {
@@ -23,4 +24,10 @@
   strong {
     display: block;
   }
+}
+
+.comment-title {
+  background-color: rgba(37,51,71,0.7);
+  margin: -11px -11px 0 -11px;
+  padding: 6px 6px 4px 6px;
 }

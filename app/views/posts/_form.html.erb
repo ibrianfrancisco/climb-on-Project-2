@@ -6,12 +6,12 @@
   </div>
   <br>
   <div>
-    <%= f.text_area :description, :required => true, size:"5x5", placeholder: "Write something...", :class =>"form-control" %>
+    <%= f.text_area :description, :required => true, size:"5x10", placeholder: "Write something...", :class =>"form-control text-area" %>
   </div>
   <br>
   <div class="form">
-    <%= f.label :image %>
-    <%= f.file_field :image %>
+    <%= f.label :image, :class => "title" %>
+    <%= f.file_field :image, :class => "title" %>
   </div>
   <br>
   <%= f.submit "Post", :class => "btn btn-primary" %>

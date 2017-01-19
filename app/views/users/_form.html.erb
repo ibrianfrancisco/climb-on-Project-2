@@ -1,8 +1,8 @@
 <%= form_for @user do |f| %>
   <div class="form-group row">
-    <label class="col-2 col-form-label">Name*</label>
+    <label class="col-2 col-form-label">Name *</label>
     <div class="col-10">
-      <%= f.text_field :name, :required => true, :maxlength => 20, :class =>"form-control"%>
+      <%= f.text_field :name, :required => true, :maxlength => 20, :class =>"form-control form-control-sm"%>
     </div>
   </div>
   <div class="form-group row">
@@ -20,32 +20,35 @@
   <div class="form-group row">
     <label class="col-2 col-form-label">Location</label>
     <div class="col-10">
-      <%= f.text_field :location, :maxlength => 20, :class =>"form-control"%>
+      <%= f.text_field :location, :maxlength => 10, :class =>"form-control"%>
     </div>
   </div>
   <div class="form-group row">
-    <label class="col-2 col-form-label">Email*</label>
+    <label class="col-2 col-form-label">Email *</label>
     <div class="col-10">
       <%= f.text_field :email, :required => true, :class =>"form-control"%>
     </div>
   </div>
+  <% if current_user %>
+  <% else %>
   <div class="form-group row">
-    <label class="col-2 col-form-label">Password*</label>
+    <label class="col-2 col-form-label">Password *</label>
     <div class="col-10">
       <%= f.password_field :password, :required => true, :class =>"form-control"%>
     </div>
   </div>
   <div class="form-group row">
-    <label class="col-2 col-form-label">Confirm Password*</label>
+    <label class="col-2 col-form-label">Confirm Password *</label>
     <div class="col-10">
       <%= f.password_field :password_confirmation, :required => true, :class =>"form-control"%>
     </div>
   </div>
+  <% end %>
   <div class="form-group row">
     <label class="col-2 col-form-label">Profile Picture</label>
     <div class="col-10">
       <%= f.file_field :image, :class => "pull-left" %>
-      <span><%= f.submit "Sign Up", :class => "btn btn-primary pull-right" %></span>
+      <span><%= f.submit "Submit", :class => "btn btn-primary pull-right" %></span>
     </div>
   </div>
 <% end %>

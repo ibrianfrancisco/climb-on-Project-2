@@ -1,42 +1,53 @@
 <div class="container">
-  <header class="profile-info col-xs-4">
+
+  <div class="profile-info col-sm-4">
+
+
+
+    <div class="container col-sm-7">
+
     <% if @user.image? %>
       <%= image_tag @user.image, :class => "profile-img" %>
     <% else %>
       <%= image_tag "noprofile.png", :class => "profile-img" %>
     <% end %>
-    <h1 class="profilename"><%= @user.name %></h1>
-    <h4><%= @user.bio %></h4>
-    <p><%= @user.age %></p>
-    <p><%= @user.location %></p>
-    <p><%= @user.email %></p>
+    <label>Age:</label>
+    <span class="userinfo"><%= @user.age %></span>
+    <label>Location:</label>
+    <span class="userinfo"><%= @user.location %></span>
+    <label>Contact:</label>
+    <span class="userinfo"><%= @user.email %></span>
     <section>
       <%= render 'shared/stats' %>
     </section>
+
+    </div>
+    <div class="container col-sm-5">
+    <h2 class="profilename" id="fixmargin"><%= @user.name %></h2>
+    <h4><%= @user.bio %></h4>
     <% if current_user %>
       <%= link_to "Account settings", edit_user_path if current_user.id == @user.id %>
-      <%#= link_to "Delete yo'self", user_path, method: :delete, data: { confirm: "You sure?" } if current_user.id == @user.id %>
       <div>
         <%= render 'follow_form' if current_user.id != @user.id %>
       </div>
     <% else %>
     <% end %>
 
-  </header>
-  <div class="container profile col-xs-4 pull-left">
-<!--     <p>Events</p>
-    <p>Photos</p>
-    <p>Message Me</p>
-    <p>Favorite Climbs</p> -->
+
+  </div>
+
+
+
+  </div>
 
   <!-- If you want to include a banner, here it is -->
 
     <%#= image_tag @user.bannerimg, :class => "profile-banner" %>
-  </div>
+  <!-- </div> -->
 
   <div class="container col-xs-8">
-    <p id="notice"><%= notice %></p>
-      <h1 class="text-center title">My Posts</h1>
+    <p id="notice title text-center"><%= notice %></p>
+      <h1 class="text-center title" id="fixmargin">My Posts</h1>
       <% @posts.each do |post| %>
         <div class="container post col-xs-12">
           <div class="panel-title pull-left">
@@ -46,17 +57,17 @@
             Posted <%= time_ago_in_words(post.created_at) %> ago.
           </div>
           <div class="clearfix"></div>
-        <p class="postcontent"><%= simple_format(post.description) %></p>
+        <div class="postcontent"><%= simple_format(post.description) %></div>
           <%= link_to 'Show more', post_path(post) %>
           <% if current_user %>
-            <%= link_to 'Edit post', post_path(post) + '/edit' if current_user.id == @user.id %>
+            <%= link_to '/ Edit post /', post_path(post) + '/edit' if current_user.id == @user.id %>
             <%= link_to "Delete post", post_path(post), method: :delete, data: { confirm: "Are you sure you want to delete?" } if current_user.id == @user.id %>
           <% else %>
           <% end %>
         </div>
       <% end %>
     <% if current_user %>
-      <%= link_to 'Create post', new_post_path if current_user.id == @user.id %>
+      <%= link_to 'Create post', new_post_path, :class => "btn btn-primary", :id => "fixmargin" if current_user.id == @user.id %>
     <% else %>
     <% end %>
   </div>
