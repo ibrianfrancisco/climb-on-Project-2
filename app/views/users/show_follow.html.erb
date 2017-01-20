@@ -31,3 +31,23 @@
       <%= will_paginate %>
     <% end %>
   </div>
+
+    <div class="container col-xs-4 post text-center">
+
+      <div>
+      <% if current_user.image? %>
+        <%= image_tag current_user.image, :class => "profile-img" %>
+      <% else %>
+        <%= image_tag "noprofile.png", :class => "profile-img" %>
+      <% end %>
+      </div>
+      <h2 class="profilename" id="fixmargin"><%= current_user.name %></h2>
+      <h4><%= current_user.bio %></h4>
+      <div>
+        <label>Age:</label>
+        <span class="userinfo"><%= current_user.age %></span>
+        <label>Location:</label>
+        <span class="userinfo"><%= current_user.location %></span>
+        <p id="fixmargin"><%= pluralize(current_user.posts.count, "post") %></p>
+</div>
+</div>

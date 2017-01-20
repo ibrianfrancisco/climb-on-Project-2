@@ -1,11 +1,12 @@
-<div>
 <% if current_user.image? %>
   <%= image_tag current_user.image, :class => "profile-img" %>
 <% else %>
   <%= image_tag "noprofile.png", :class => "profile-img" %>
 <% end %>
-</div>
 <h2 class="profilename" id="fixmargin"><%= current_user.name %></h2>
-<div class="text-center">
-  <%= pluralize(current_user.posts.count, "post") %>
-</div>
+<h4><%= current_user.bio %></h4>
+<label>Age:</label>
+<span class="userinfo"><%= current_user.age %></span>
+<label>Location:</label>
+<span class="userinfo"><%= current_user.location %></span>
+<p id="fixmargin"><%= pluralize(current_user.posts.count, "post") %></p>

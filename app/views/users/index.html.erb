@@ -1,15 +1,11 @@
 <% if current_user %>
-  <div class="container">
-    <p id="notice"><%= notice %></p>
-    </div>
-  <div class="container">
-    <h1 class="text-center">Dashboard</h1>
-  </div>
-  <div class="container col-md-8">
-    <h3>User's Feed</h3>
+  <p id="notice"><%= notice %></p>
+  <h1 class="text-center title" id="fixmargin">Dashboard</h1>
+  <div class="container col-xs-8">
+    <h1 class="title" id="fixmargin">User's Feed</h1>
     <%= render 'shared/feed' %>
   </div>
-  <div class="container col-md-4">
+  <div class="profile-info col-xs-3 text-center">
     <section>
       <%= render 'shared/user_info' %>
     </section>
@@ -27,18 +23,18 @@
       <h1 class="maintitle">Climb On</h1>
       <h3 class="phrase-title">Re-live your adventures</h3>
       <div class="login form-group">
-      <%= form_tag sessions_path do %>
-        <div class="field">
-          <%= text_field_tag :email, params[:email], placeholder: "Email" %>
-        </div>
-        <div class="field">
-          <%= password_field_tag :password, "", placeholder: "Password" %>
-        </div>
-        <span class="actions"><%= submit_tag "", :style => "display: none;" %></span>
-      <% end %>
-      <footer class="text-center">
-        &copy; 2017 <span class="name">ibrianfrancisco</span>
-      </footer>
+        <%= form_tag sessions_path do %>
+          <div class="field">
+            <%= text_field_tag :email, params[:email], placeholder: "Email" %>
+          </div>
+          <div class="field">
+            <%= password_field_tag :password, "", placeholder: "Password" %>
+          </div>
+          <span class="actions"><%= submit_tag "", :style => "display: none;" %></span>
+        <% end %>
+        <footer class="text-center">
+          &copy; 2017 <span class="name">ibrianfrancisco</span>
+        </footer>
       </div>
     </div>
   </div>
