@@ -2,6 +2,13 @@
   display: inline-block;
   position: relative;
   top: 10px;
+  a {
+    color: #000;
+    &:hover {
+      color: rgba(73,90,112,1);
+      text-decoration: none;
+    }
+  }
 }
 
 .profile-img {
