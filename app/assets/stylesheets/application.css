@@ -71,7 +71,7 @@ nav.navbar {
 .sign-backdrop {
   width: 600px;
   height: 688px;
-  background: rgba(53,70,92,0.8) !important;
+  background: rgba(53,70,92,0.9) !important;
   padding: 1px 30px;
   color: white;
   border-radius: 10px;
@@ -80,6 +80,21 @@ nav.navbar {
 
 .text-area {
   resize: none;
+}
+
+.profile-image-cropper {
+  width: 300px;
+  height: 148px;
+  overflow: hidden;
+  object-fit: cover;
+}
+.profile-image-cropper img {
+  vertical-align: middle;
+  height: 100%;
+  min-width: 100%;
+  left: 50%;
+  position: relative;
+  transform: translateX(-50%);
 }
 
 .clearfix {
