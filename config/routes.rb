@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     end
   end
   resources :posts, except: [:index], shallow: true do
-    resources :comments, only: [:edit, :update, :create, :destroy]
+    resources :comments, only: [:update, :create, :destroy]
   end
   resources :relationships, only: [:create, :destroy]
   resources :sessions, only: [:index, :new, :create, :destroy]

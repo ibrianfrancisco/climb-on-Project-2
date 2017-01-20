@@ -1,53 +1,26 @@
 <% provide(:title, @title) %>
-  <aside class="span4">
-    <section>
-      <% if @user.image? %>
-        <%= image_tag @user.image, :class => "profile-img" %>
-      <% else %>
-      <% end %>
-      <h1><%= @user.name %></h1>
-      <span><%= link_to "View my profile", @user %></span>
-      <span><b>Posts:</b> <%= @user.posts.count %></span>
-    </section>
-    <section>
-      <%= render 'shared/stats' %>
-      <% if @users.any? %>
-        <div class="user_avatars">
-          <% @users.each do |user| %>
-            <%= link_to gravatar_for(user), user %>
-            <%= user.name %>
-          <% end %>
-
-        </div>
-      <% end %>
-    </section>
-  </aside>
-  <div class="span8">
-    <h3><%= @title %></h3>
-    <% if @users.any? %>
-      <ul class="users">
-        <%#= render @users %>
-      </ul>
-      <%= will_paginate %>
-    <% end %>
+<div class="container">
+  <div class="follow-page post">
+  <div class="text-center">
+  <div>
+    <h1 class="profilename" id="fixmargin"><%= @title %></h1>
   </div>
-
-    <div class="container col-xs-4 post text-center">
-
-      <div>
-      <% if current_user.image? %>
-        <%= image_tag current_user.image, :class => "profile-img" %>
-      <% else %>
-        <%= image_tag "noprofile.png", :class => "profile-img" %>
-      <% end %>
-      </div>
-      <h2 class="profilename" id="fixmargin"><%= current_user.name %></h2>
-      <h4><%= current_user.bio %></h4>
-      <div>
-        <label>Age:</label>
-        <span class="userinfo"><%= current_user.age %></span>
-        <label>Location:</label>
-        <span class="userinfo"><%= current_user.location %></span>
-        <p id="fixmargin"><%= pluralize(current_user.posts.count, "post") %></p>
+  <% if @user.image? %>
+    <%= image_tag @user.image, :class => "profile-img" %>
+  <% else %>
+    <%= image_tag "noprofile.png", :class => "profile-img" %>
+  <% end %>
+  <%= render 'shared/stats' %>
+  </div>
+  <section>
+    <ul class="feedposts">
+    <% if @users.any? %>
+        <% @users.each do |user| %>
+          <li><%= link_to gravatar_for(user), user %>
+          <%= user.name %></li>
+        <% end %>
+    <% end %>
+    </ul>
+  </section>
 </div>
 </div>

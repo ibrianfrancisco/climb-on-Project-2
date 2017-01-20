@@ -10,6 +10,8 @@
       </div>
       <p id="fixmargin">Posted <%= time_ago_in_words(feed_item.created_at) %> ago</p>
       <p class="fixcomment container col-xs-12"><%= feed_item.description %></p>
+      <%= link_to 'Show more', post_path(feed_item.id) %>
+      <%= link_to '/ Edit post', post_path(feed_item.id) + '/edit' if current_user == feed_item.user %>
     </div>
   </div>
 </li>

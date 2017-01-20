@@ -1,9 +1,8 @@
 <div>
   <%= form_for(@post) do |f| %>
-    <%= f.text_field :title, :required => true, :maxlength => 90, :size => "30", placeholder: "Title" %>
+    <%= f.text_field :title, :required => true, :maxlength => 90, :class => "form-control", placeholder: "Title" %>
     <br>
-    <br>
-    <%= f.text_area :description, :required => true, size: "27x5", :class => "text-area", placeholder: "Compose new post..." %>
+    <%= f.text_area :description, :required => true, size: "5x5", :class => "text-area form-control", placeholder: "Compose new post..." %>
     <%= f.file_field :image %>
   <%= f.submit "Post", class: "btn btn-large btn-primary" %>
 </div>
