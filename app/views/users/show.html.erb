@@ -1,40 +1,38 @@
 <div class="container">
 
-  <div class="profile-info col-sm-4">
+  <div class="profile-info col-sm-3">
 
 
 
-    <div class="container col-sm-7">
-
+    <div class="container col-sm-12 text-center">
+    <div>
     <% if @user.image? %>
       <%= image_tag @user.image, :class => "profile-img" %>
     <% else %>
       <%= image_tag "noprofile.png", :class => "profile-img" %>
     <% end %>
-    <label>Age:</label>
-    <span class="userinfo"><%= @user.age %></span>
-    <label>Location:</label>
-    <span class="userinfo"><%= @user.location %></span>
-    <label>Contact:</label>
-    <span class="userinfo"><%= @user.email %></span>
+    </div>
+    <h2 class="profilename" id="fixmargin"><%= @user.name %></h2>
+    <h4><%= @user.bio %></h4>
+    <div>
+      <label>Age:</label>
+      <span class="userinfo"><%= @user.age %></span>
+      <label>Location:</label>
+      <span class="userinfo"><%= @user.location %></span>
+    </div>
     <section>
       <%= render 'shared/stats' %>
     </section>
-
-    </div>
-    <div class="container col-sm-5">
-    <h2 class="profilename" id="fixmargin"><%= @user.name %></h2>
-    <h4><%= @user.bio %></h4>
-    <% if current_user %>
-      <%= link_to "Account settings", edit_user_path if current_user.id == @user.id %>
       <div>
         <%= render 'follow_form' if current_user.id != @user.id %>
       </div>
+    <% if current_user %>
+      <%= link_to "Account settings", edit_user_path, :class => "btn btn-primary" if current_user.id == @user.id %>
+    </div>
     <% else %>
     <% end %>
 
 
-  </div>
 
 
 
@@ -45,7 +43,7 @@
     <%#= image_tag @user.bannerimg, :class => "profile-banner" %>
   <!-- </div> -->
 
-  <div class="container col-xs-8">
+  <div class="container col-xs-9">
     <p id="notice title text-center"><%= notice %></p>
       <h1 class="text-center title" id="fixmargin">My Posts</h1>
       <% @posts.each do |post| %>

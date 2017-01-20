@@ -1,9 +1,11 @@
 .post-img {
-  min-width: 480px;
-  max-width: 600px;
-  min-height: 280px;
-  max-height: 400px;
-  border-radius: 5px;
+  width: 475px;
+  height: 350px !important;
+  // min-width: 480px;
+  // max-width: 600px;
+  // min-height: 280px;
+  // max-height: 400px;
+  // border-radius: 5px;
 }
 
 .post {
@@ -30,22 +32,14 @@ div.panel-title {
   color: white;
 }
 
-.postname a{
+.postname a {
   font-weight: bold;
   color: #fff;
   font-size: 17px;
+    &:hover {
+    color: #fff;
+  }
 }
-
-// .fixname {
-//   position: relative;
-//   bottom: 13px;
-// }
-
-// .fixcomment {
-//   position: relative;
-//   font-size: 14px;
-//   left: 20px;
-// }
 
 .title{
   font-weight: bold;

@@ -1,10 +1,10 @@
-<div class="page">
+<div class="mainpage bg">
   <div class="container text-center">
-    <span id="alert" class="text-danger"><%= alert %></span>
     <h1 class="maintitle">Climb On</h1>
     <h3 class="phrase-title">Re-live your adventures</h3>
     <div class="login form-group">
     <%= form_tag sessions_path do %>
+    <span id="alert" class="title"><%= alert %></span>
       <div class="field">
         <%= text_field_tag :email, params[:email], placeholder: "Email" %>
       </div>
