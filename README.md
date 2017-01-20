@@ -2,7 +2,7 @@
 
 ----
 
-[Screen Shot 2017-01-20 at 9.09.09 AM](http://i.imgur.com/S2TjE4z.jpg)
+http://i.imgur.com/S2TjE4z.jpg
 
 ###Description of app
 
@@ -13,10 +13,10 @@ Further down the line, I would want people to be able to schedule event meetups.
   
 ###Technologies Used
 
-- HTML 
-- CSS
-- JQuery
-- Ruby on Rails
+- HTML - What structured the app
+- CSS - Used to style the app
+- JQuery - Implemented just for the follow and unfollow button
+- Ruby on Rails - Used to structure the logic between users, routes, etc
 
 ###Getting Started
 **Link to Blog:** https://climbon-blog.herokuapp.com/  
