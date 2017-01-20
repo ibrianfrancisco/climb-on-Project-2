@@ -8,7 +8,6 @@ class PostsController < ApplicationController
 
   def show
     @comment = Comment.new
-    # @comments = current_user.comments.paginate(:page => params[:page], :per_page => 5)
   end
 
  def new

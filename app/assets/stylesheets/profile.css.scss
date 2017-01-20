@@ -22,14 +22,6 @@
   padding: 0 5px;
 }
 
-.linefix {
-  margin: 0 0 10px 0;
-}
-
-body {
-  padding-top: 70px;
-}
-
 .profile-info {
   height: 100%;
   background: white;
@@ -46,10 +38,6 @@ body {
   margin-top: 5px;
 }
 
-div.mainpage {
-  padding: 213px 0;
-}
-
 div.bg {
   background-image: image-url("loginimage.jpg");
   -webkit-background-size: cover;
@@ -64,8 +52,4 @@ div.bg {
   height: auto;
   top: 0;
   left: 0;
-}
-
-div.signpage {
-  padding: 70px 0 15px 0;
 }

@@ -20,6 +20,7 @@
 
 body {
   background: rgba(53,70,92,1) !important;
+  padding-top: 70px;
 }
 
 #fixmargin {
@@ -82,19 +83,16 @@ nav.navbar {
   resize: none;
 }
 
-.profile-image-cropper {
-  width: 300px;
-  height: 148px;
-  overflow: hidden;
-  object-fit: cover;
+div.mainpage {
+  padding: 213px 0;
 }
-.profile-image-cropper img {
-  vertical-align: middle;
-  height: 100%;
-  min-width: 100%;
-  left: 50%;
-  position: relative;
-  transform: translateX(-50%);
+
+div.signpage {
+  padding: 70px 0 15px 0;
+}
+
+.linefix {
+  margin: 0 0 10px 0;
 }
 
 .clearfix {

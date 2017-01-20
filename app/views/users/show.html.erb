@@ -1,71 +1,66 @@
 <div class="container">
-
   <div class="profile-info col-sm-3">
-
-
-
     <div class="container col-sm-12 text-center">
-    <div>
-    <% if @user.image? %>
-      <%= image_tag @user.image, :class => "profile-img" %>
-    <% else %>
-      <%= image_tag "noprofile.png", :class => "profile-img" %>
-    <% end %>
-    </div>
-    <h2 class="profilename" id="fixmargin"><%= @user.name %></h2>
-    <h4><%= @user.bio %></h4>
-    <div>
-      <label>Age:</label>
-      <span class="userinfo"><%= @user.age %></span>
-      <label>Location:</label>
-      <span class="userinfo"><%= @user.location %></span>
-    </div>
-    <section>
-      <%= render 'shared/stats' %>
-    </section>
-    <% if current_user %>
       <div>
-        <%= render 'follow_form' if current_user.id != @user.id %>
+        <% if @user.image? %>
+          <%= image_tag @user.image, :class => "profile-img" %>
+        <% else %>
+          <%= image_tag "noprofile.png", :class => "profile-img" %>
+        <% end %>
       </div>
-      <%= link_to "Account settings", edit_user_path, :class => "btn btn-primary" if current_user.id == @user.id %>
-    <% else %>
-    <% end %>
+      <h2 class="profilename" id="fixmargin"><%= @user.name %></h2>
+      <h4><%= @user.bio %></h4>
+      <div>
+        <label>Age:</label>
+        <span class="userinfo"><%= @user.age %></span>
+        <label>Location:</label>
+        <span class="userinfo"><%= @user.location %></span>
+      </div>
+      <section>
+        <%= render 'shared/stats' %>
+      </section>
+      <% if current_user %>
+        <div>
+          <%= render 'follow_form' if current_user.id != @user.id %>
+        </div>
+        <%= link_to "Account settings", edit_user_path, :class => "btn btn-primary" if current_user.id == @user.id %>
+      <% else %>
+      <% end %>
+      </div>
     </div>
-
-
-
-
-
-  </div>
 
   <div class="container col-xs-9">
     <p id="notice" class="title text-center"><%= notice %></p>
-      <h1 class="text-center title" id="fixmargin">My Posts</h1>
+    <h1 class="text-center title" id="fixmargin">My Posts</h1>
+    <% if @posts.any? %>
       <% @posts.each do |post| %>
         <div class="panel post col-xs-12">
-        <div class="user-show-title">
-          <div class="panel-title pull-left">
-            <%= post.title %>
-          </div>
-          <div class="panel-title pull-right">
-            Posted <%= time_ago_in_words(post.created_at) %> ago
-          </div>
-          <div class="clearfix"></div>
+          <div class="user-show-title">
+            <div class="panel-title pull-left">
+              <%= post.title %>
+            </div>
+            <div class="panel-title pull-right">
+              Posted <%= time_ago_in_words(post.created_at) %> ago
+            </div>
+            <div class="clearfix"></div>
           </div>
         <div class="postcontent" id="fixmargin"><%= simple_format(post.description) %></div>
-          <%= link_to 'Show more', post_path(post) %>
-          <% if current_user %>
-            <%= link_to '/ Edit post /', post_path(post) + '/edit' if current_user.id == @user.id %>
-            <%= link_to "Delete post", post_path(post), method: :delete, data: { confirm: "Are you sure you want to delete?" } if current_user.id == @user.id %>
-          <% else %>
-          <% end %>
+        <%= link_to 'Show more', post_path(post) %>
+        <% if current_user %>
+          <%= link_to '/ Edit post /', post_path(post) + '/edit' if current_user.id == @user.id %>
+          <%= link_to "Delete post", post_path(post), method: :delete, data: { confirm: "Are you sure you want to delete?" } if current_user.id == @user.id %>
+        <% else %>
+        <% end %>
         </div>
       <% end %>
-      <div class="text-center">
-    <% if current_user %>
-      <%= link_to 'Create post', new_post_path, :class => "btn btn-primary", :id => "fixmargin" if current_user.id == @user.id %>
     <% else %>
+      <p class="title text-center">This person hasn't posted anything yet!</p>
     <% end %>
+    <div class="text-center">
+      <% if current_user %>
+        <%= link_to 'Create post', new_post_path, :class => "btn btn-primary", :id => "fixmargin" if current_user.id == @user.id %>
+      <% else %>
+      <% end %>
     </div>
   </div>
-  </div>
+</div>

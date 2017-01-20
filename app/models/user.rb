@@ -32,12 +32,4 @@ class User < ActiveRecord::Base
     Post.from_users_followed_by(self)
    end
 
-
-  private
-
-
-
-  # def set_defaults
-  #   self.discipline = "General Science" if self.discipline.nil?
-  # end
 end

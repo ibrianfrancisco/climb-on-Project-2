@@ -3,7 +3,7 @@
   <div class="follow-page post">
   <div class="text-center">
   <div>
-    <h1 class="profilename" id="fixmargin"><%= @title %></h1>
+    <h1 class="profilename" id="fixmargin"><%= @user.name + "'s " + @title %></h1>
   </div>
   <% if @user.image? %>
     <%= image_tag @user.image, :class => "profile-img" %>
@@ -11,6 +11,7 @@
     <%= image_tag "noprofile.png", :class => "profile-img" %>
   <% end %>
   <%= render 'shared/stats' %>
+  <%= link_to "View Profile", user_path(@user) %>
   </div>
   <section>
     <ul class="feedposts">

@@ -8,7 +8,6 @@ class SessionsController < ApplicationController
     else
       flash.now.alert = 'Invalid login - try again!'
       render :index
-                                                                                 # Find a way to render users/index view. or root_path instead of sessions. everytime, i refresh on sessions, error.
     end
   end
 
