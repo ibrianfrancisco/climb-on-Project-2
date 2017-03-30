@@ -12,10 +12,9 @@
 }
 
 .profile-img {
-  width: 148px;
-  height: 148px;
+  max-width: 148px;
+  height: auto;
   border: black 2px solid;
-  margin: 10px 30px;
   border-radius: 5px;
 }
 
@@ -43,20 +42,4 @@
   min-height: 180px;
   max-height: 240px;
   margin-top: 5px;
-}
-
-div.bg {
-  background-image: image-url("loginimage.jpg");
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-repeat: repeat;
-  background-attachment: fixed;
-  margin-top: -70px;
-  /* Preserve aspet ratio */
-  width: 100%;
-  height: auto;
-  top: 0;
-  left: 0;
 }

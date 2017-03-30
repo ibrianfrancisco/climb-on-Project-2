@@ -1,7 +1,7 @@
 <% if current_user.image? %>
-  <%= image_tag current_user.image, :class => "profile-img" %>
+  <%= image_tag current_user.image, :class => "profile-img img-responsive" %>
 <% else %>
-  <%= image_tag "noprofile.png", :class => "profile-img" %>
+  <%= image_tag "noprofile.png", :class => "profile-img img-responsive" %>
 <% end %>
 <div><h2 class="profilename" id="fixmargin"><%= link_to current_user.name, user_path(current_user.id) %></h2></div>
 <h4><%= current_user.bio %></h4>
