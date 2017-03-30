@@ -17,7 +17,7 @@ This site is a blog for rock climbers. Since climbers usually go to adventurous 
 - Heroku 
 
 ### Getting Started
-**Link to Site:** https://climbon-blog.herokuapp.com/  
+**Link to Site:** https://climbon-community.herokuapp.com/  
 
 When you first go to the website you are greeted with a login page. From there you can sign up using the link in the navbar. After completing the sign up sheet you can roam around the blog looking at random users through an explore button in the navbar. Feel free to write a post from the dashboard or from your profile page and watch it pop up in your dashboard.
 
