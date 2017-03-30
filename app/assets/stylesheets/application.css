@@ -99,12 +99,3 @@ div.signpage {
   clear: both;
 }
 
-div.bg {
-  background: url("loginimage.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  margin-top: -70px;
-  min-height: 700px;
-  height: 100vh;
-}

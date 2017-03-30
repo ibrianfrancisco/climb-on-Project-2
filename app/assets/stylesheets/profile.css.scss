@@ -43,3 +43,17 @@
   max-height: 240px;
   margin-top: 5px;
 }
+
+div.bg {
+  background-image: image-url("loginimage.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin-top: -70px;
+  /* Preserve aspet ratio */
+  min-height: 700px;
+  height: 100vh;
+}
