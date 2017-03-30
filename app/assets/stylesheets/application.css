@@ -100,7 +100,7 @@ div.signpage {
 }
 
 div.bg {
-  background-image: url("loginimage.jpg");
+  background: url("loginimage.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
