@@ -70,13 +70,13 @@ nav.navbar {
 }
 
 .sign-backdrop {
-  width: 600px;
-  height: 688px;
+  width: 50vw;
+  height: 90vh;
   background: rgba(53,70,92,0.9) !important;
-  padding: 1px 30px;
+  padding: 5px 30px;
   color: white;
   border-radius: 10px;
-  margin:  auto;
+  margin: auto;
 }
 
 .text-area {
@@ -99,3 +99,8 @@ div.signpage {
   clear: both;
 }
 
+@media screen and (max-width: 800px) {
+  .sign-backdrop {
+    width: 75vw;
+  }
+}
